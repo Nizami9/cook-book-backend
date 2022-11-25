@@ -1,6 +1,9 @@
 const { Client } = require('pg');
 const express = require('express');
 const app = express();
+const cors = require('cors')
+
+app.use(cors({origin:"*", optionsSuccessStatus: 200}));
 
 const client = new Client(
     {

@@ -4,24 +4,12 @@ const fileSystem = require('fs');
 const port = 3030;
 const axios = require('axios');
 const path = require('path');
-
 const recipes = require('./receipes.json')
 let bodyParser = require('body-parser')
-const data = require("./receipes.json")
-// app.get('/receipslist', (req, res) =>{
-//     axios.get('http://jsonplaceholder.typicode.com/posts/1')
-//     .then(response =>{
-//         let package = JSON.stringify(response.data)
-//         console.log(package)
-//         fileSystem.writeFile('receipes.json', package, function (err) {
-//             console.log(err);
-//             res.send("Success")
-//         })
-//     })
-//     .catch(err=>console.log(err))
-// })
+const data = require("./receipes.json");
 
-
+const cors = require('cors')
+app.use(cors({origin:"*", optionsSuccessStatus: 200}))
 
 const filePath = path.join(process.cwd(), "receipes.json")
 
